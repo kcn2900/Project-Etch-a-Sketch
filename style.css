@@ -6,11 +6,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.top {
+    align-self: center;
+    justify-self: center;
 }
 
 .container {
     background-color: green;
     margin-top: 50px;
+    margin-bottom: 50px;
     width: 500px;
     height: 500px;
     display: flex;

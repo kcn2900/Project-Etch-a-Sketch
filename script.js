@@ -1,4 +1,5 @@
 function addSquare(num) {
+    container.replaceChildren();
     for (let i = 0; i < num * num; i++) {
         const newSquare = document.createElement("div");
         newSquare.className = "square";
@@ -21,4 +22,25 @@ container.addEventListener('mouseover', (event) => {
         event.target.style.backgroundColor = newRGB;
 });
 
-addSquare(16);
+const input = document.querySelector("input");
+input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        let temp = +input.value;
+        if (typeof temp === "number" && !isNaN(temp)) {
+            if (temp <= 0 || temp > 100) {
+                alert("Number out of range");
+            }
+            else
+                addSquare(temp);
+        }
+        else {
+            alert("Not a valid number");
+        }
+    }
+})
+
+const btn = document.querySelector("button");
+btn.addEventListener("click", () => {
+    let children = container.childNodes;
+    container.childNodes.forEach((child) => child.style.backgroundColor = 'beige');
+})
